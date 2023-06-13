@@ -13,11 +13,13 @@ const Switch = React.forwardRef<HTMLButtonElement, RadixSwitch.SwitchProps>(
         ref={ref}
         {...props}
         checked={checked}
-        className={clsx("bg-code h-[18px] w-8 rounded-full")}
+        className={clsx(
+          "bg-code h-[18px] w-8 rounded-full dark:bg-subtle-light"
+        )}
       >
         <RadixSwitch.Thumb
           className={clsx(
-            " block h-2 w-2 rounded-full bg-white transition-transform",
+            " block h-2 w-2 rounded-full bg-base-light dark:bg-base-dark transition-transform",
             {
               "translate-x-[19px]": checked,
               "translate-x-[5px]": !checked,

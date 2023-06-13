@@ -190,12 +190,17 @@ const ExplainerPoints: React.FC<ExplainerPointsProps> = ({ product }) => {
         <div className="min-h-full w-[1px] mr-6 bg-border-light dark:bg-border-dark flex flex-col justify-end">
           <div className="h-[200px] w-full bg-gradient-to-t from-white dark:from-[#1C1C1C]" />
         </div>
-        <div className="flex flex-col w-[calc(100%-25px)] gap-y-12">
+        <div className="flex flex-col w-[calc(100%-25px)] ">
           <ProductDataBlock product={product} />
+          <Divider />
           <ListingInventoryLevelsBlock />
+          <Divider />
           <ListingLocationsBlock product={product} />
+          <Divider />
           <WhatIsAReservationBlock />
+          <Divider />
           <DemoDataBlock product={product} />
+          <Divider />
           <MerchantBlock />
         </div>
       </div>
@@ -251,7 +256,7 @@ const ProductDataBlock = ({ product }: { product: PricedProduct }) => {
           <ComponentDataBox
             data={JSON.stringify(product, null, 2)}
             Component={
-              <div className=" w-80 h-80">
+              <div className="w-80 h-80">
                 <div
                   className="hover:shadow-card-rest rounded-2xl"
                   onClick={(e) => {
@@ -305,7 +310,7 @@ const DemoDataBlock = ({ product }: { product: PricedProduct }) => {
       }
       body={
         <div className="w-full flex flex-col gap-y-4">
-          <div className="rounded-lg w-full h-[440px] p-2 flex flex-col overflow-y-auto overflow-x-hidden my-4">
+          <div className="rounded-lg w-full md:h-[460px] p-2 flex flex-col overflow-y-auto overflow-x-hidden my-4">
             <div
               className={clsx("w-full h-full flex items-center justify-center")}
             >
@@ -597,7 +602,7 @@ const LocationsButtons = ({
         return (
           <div
             key={i}
-            className="hover:shadow-md hover:bg-subtle-light rounded-lg"
+            className="hover:shadow-md hover:bg-subtle-light dark:hover:bg-subtle-dark rounded-lg"
           >
             <LocationButton
               onClick={handleClick}
@@ -623,7 +628,7 @@ const ComponentDataBox = ({
   const [state, setState] = useState<"component" | "data">("component")
 
   return (
-    <div className="rounded-lg w-full h-[460px] flex flex-col overflow-y-auto my-5">
+    <div className="rounded-lg w-full md:h-[460px] flex flex-col overflow-y-auto my-5">
       <div className="w-full text-xs items-center font-semibold gap-x-6 flex pl-8 pb-2 text-base-light dark:text-base-dark">
         <span
           onClick={() => {
@@ -660,7 +665,7 @@ const ComponentDataBox = ({
           {alternativeComponentTitle ?? "Component"}
         </span>
       </div>
-      <div className="max-w-full flex flex-col h-full overflow-x-hidden">
+      <div className="max-w-full flex mt-2 flex-col h-full overflow-x-hidden">
         {state === "data" && (
           <div
             className={clsx("w-full h-full flex items-center justify-center")}
@@ -668,7 +673,7 @@ const ComponentDataBox = ({
             <CodeSnippet
               code={data}
               language="typescript"
-              codeClassNames="h-[390px]"
+              codeClassNames="md:h-[390px] h-[300px]"
             />
           </div>
         )}

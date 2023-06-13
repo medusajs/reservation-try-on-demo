@@ -50,8 +50,12 @@ const Notification: React.FC<NotificationProps> = ({
     <ToasterContainer visible={toast.visible} className="w-[380px]">
       <div>{getIcon(type)}</div>
       <div className="ml-4 mr-4 gap-y-2 flex flex-grow flex-col">
-        <span className="text-sm text-gray-900">{title}</span>
-        <span className="text-gray-500 text-sm">{message}</span>
+        <span className="text-sm text-gray-900 dark:text-base-dark">
+          {title}
+        </span>
+        <span className="text-muted-light dark:text-muted-dark text-sm">
+          {message}
+        </span>
       </div>
       <div>
         <button className="text-grey-40" onClick={onDismiss}>
@@ -131,7 +135,7 @@ const ToasterContainer: React.FC<ToasterContainerProps> = ({
   return (
     <div
       className={clsx(
-        "bg-white p-base rounded-lg px-4 pt-4 pb-6 shadow-toaster mb-xsmall flex items-start border last:mb-0",
+        "bg-white dark:bg-base-dark p-base rounded-lg px-4 pt-4 pb-6 mb-xsmall flex items-start border border-base-light dark:border-base-dark last:mb-0",
         className,
         {
           "animate-enter": visible,

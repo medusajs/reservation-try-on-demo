@@ -25,7 +25,7 @@ const CodeSnippet: React.FC<Props> = ({
       )}
       <div
         className={clsx(
-          "p-6 w-full max-h-[405px] overflow-scroll",
+          "p-6 w-full md:max-h-[405px] sm:max-h-[350px] overflow-scroll",
           codeClassNames
         )}
       >
