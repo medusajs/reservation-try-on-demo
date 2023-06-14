@@ -1,15 +1,16 @@
-import FooterLink from "./FooterLink";
+import FooterLink from "./FooterLink"
 
 type Link = {
-  href: string;
-  label: string;
-  tag?: string;
-};
+  href: string
+  label: string
+  tag?: string
+}
 
 export type FooterLinkGroupProps = {
-  groupName: string;
-  links: Link[];
-};
+  groupName: string
+  link?: Link
+  links: Link[]
+}
 
 const FooterLinkGroup = ({ groupName, links }: FooterLinkGroupProps) => {
   return (
@@ -23,11 +24,11 @@ const FooterLinkGroup = ({ groupName, links }: FooterLinkGroupProps) => {
                 {link.label}
               </FooterLink>
             </li>
-          );
+          )
         })}
       </ul>
     </div>
-  );
-};
+  )
+}
 
-export default FooterLinkGroup;
+export default FooterLinkGroup

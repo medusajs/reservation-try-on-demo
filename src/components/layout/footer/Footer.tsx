@@ -9,84 +9,50 @@ import {
 import FooterLinkGroup, { FooterLinkGroupProps } from "./FooterLinkGroup"
 
 import FooterLink from "./FooterLink"
-import NewsletterSignup from "./NewsletterSignup"
 
 const linkGroups: FooterLinkGroupProps[] = [
   {
-    groupName: "Product",
-    links: [
-      {
-        href: "https://www.medusajs.com",
-        label: "Medusa for B2B",
-      },
-      {
-        href: "https://www.medusajs.com",
-        label: "Plugins",
-        tag: "New",
-      },
-      {
-        href: "https://www.medusajs.com",
-        label: "Get started",
-      },
-      {
-        href: "https://www.medusajs.com",
-        label: "Careers",
-        tag: "We're hiring",
-      },
-    ],
+    groupName: "Get started",
+    link: {
+      href: "https://www.medusajs.com",
+      label: "Get started",
+    },
+    links: [],
   },
   {
-    groupName: "Developers",
-    links: [
-      {
-        href: "https://docs.medusajs.com",
-        label: "Docs",
-      },
-      {
-        href: "https://docs.medusajs.com",
-        label: "API references",
-      },
-      {
-        href: "https://docs.medusajs.com",
-        label: "Community",
-      },
-      {
-        href: "https://docs.medusajs.com",
-        label: "Discussions",
-      },
-    ],
+    groupName: "Documentation",
+    link: {
+      href: "https://docs.medusajs.com",
+      label: "Documentation",
+    },
+    links: [],
   },
   {
-    groupName: "Company",
-    links: [
-      {
-        href: "https://www.medusajs.com",
-        label: "Blog",
-      },
-      {
-        href: "https://www.medusajs.com",
-        label: "Pricing",
-      },
-      {
-        href: "https://www.medusajs.com",
-        label: "About",
-      },
-      {
-        href: "https://www.medusajs.com",
-        label: "Contact us",
-      },
-    ],
+    groupName: "Blog",
+    link: {
+      href: "https://www.medusajs.com/blog",
+      label: "Blog",
+    },
+    links: [],
+  },
+  {
+    groupName: "README",
+    link: {
+      href: "https://medusajs.com/readme/",
+      label: "Readme",
+    },
+    links: [],
   },
 ]
 
 const Footer = () => {
   return (
-    <footer className="flex items-start justify-center">
+    <footer className="flex items-start justify-center pb-[40px] lg:pb-0">
       <div className="max-w-7xl w-full">
         <Divider />
         <div className="pt-24 pb-16 flex flex-col gap-y-16">
-          <div className="max-w-content w-full mx-auto px-5 md:px-9 flex flex-col md:flex-row gap-8 flex-wrap">
-            <div className="w-full md:w-auto flex-grow">
+          <div className="max-w-content w-full mx-auto px-4 md:px-8 flex flex-col md:flex-row gap-8 flex-wrap">
+            <div className="w-full md:w-auto grow-[0.5]">
               <a
                 href="https://www.medusajs.com"
                 target="_blank"
@@ -95,16 +61,15 @@ const Footer = () => {
                 <PictorialLogo />
               </a>
             </div>
-            <div className="flex w-full md:w-auto gap-10 md:gap-16 lg:gap-24 flex-wrap">
-              <div className="flex flex-wrap gap-10 gap-x-14 md:gap-16 lg:gap-24">
+            <div className="flex grow-[0.2] w-full md:w-auto gap-10 md:gap-16 lg:gap-24 flex-wrap">
+              <div className="flex flex-wrap gap-10 gap-x-14 md:gap-16 lg:gap-24 w-full justify-between">
                 {linkGroups.map((group, i) => {
                   return <FooterLinkGroup key={i} {...group} />
                 })}
               </div>
-              <NewsletterSignup />
             </div>
           </div>
-          <div className="flex items-center justify-between text-labels-regular">
+          <div className="flex items-center justify-between text-labels-regular px-4 md:px-8">
             <span className="text-muted-light dark:text-muted-dark">
               © 2023 MedusaJS, Inc. All rights reserved.
             </span>
