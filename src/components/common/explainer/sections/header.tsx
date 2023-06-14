@@ -5,14 +5,16 @@ import { Pill } from "../../pill"
 export const ExplainerHeader = () => {
   return (
     <div className="flex flex-col w-full items-start sm:px-5">
-      <Pill link="https://docs.medusajs.com/?utm_source=inventory-module-demo&utm_medium=recap&utm_campaign=about-page&utm_content=pill">
-        <span className="mr-3 pr-3 border-r dark:border-r-neutral-a-dark border-r-neutral-button-light">
-          Building blocks
-        </span>
-        <span className="dark:text-subtle-dark text-subtle-light">
-          Read more
-        </span>
-      </Pill>
+      <div className="mt-0.5">
+        <Pill link="https://docs.medusajs.com/?utm_source=inventory-module-demo&utm_medium=recap&utm_campaign=about-page&utm_content=pill">
+          <span className="mr-3 pr-3 border-r dark:border-r-neutral-a-dark border-r-neutral-button-light">
+            Building blocks
+          </span>
+          <span className="dark:text-subtle-dark text-subtle-light">
+            Read more
+          </span>
+        </Pill>
+      </div>
 
       <div className="flex flex-col gap-y-1.5">
         <h2 className="text-headers-h4 font-medium mt-7">

@@ -86,7 +86,7 @@ export const ListingLocationsSection = ({
           <ComponentDataBox
             data={JSON.stringify(tryOnLocations, null, 2)}
             Component={
-              <div className="p-3 rounded-lg ">
+              <div className="p-3 rounded-lg w-10/12 sm:w-2/3 md:w-[500px]">
                 <LocationsButtons
                   tryOnLocation={tryOnLocations?.try_on_locations}
                 />
@@ -122,7 +122,7 @@ const LocationsButtons = ({
         return (
           <div
             key={i}
-            className="hover:shadow-md hover:bg-subtle-light dark:hover:bg-subtle-dark rounded-lg w-[500px]"
+            className="hover:shadow-md hover:bg-subtle-light dark:hover:bg-subtle-dark rounded-lg"
           >
             <LocationButton
               onClick={handleClick}
