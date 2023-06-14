@@ -57,7 +57,7 @@ export const WhatIsAReservationSection = () => {
               <div className="w-full h-full flex items-center justify-center">
                 <CodeSnippet
                   label={
-                    <a href="https://github.com/medusajs/medusa">
+                    <a href="https://github.com/medusajs/reservation-try-on-demo/blob/main/src/app/api/create-reservation/route.ts">
                       src/app/api/create-reservation/route.ts
                     </a>
                   }

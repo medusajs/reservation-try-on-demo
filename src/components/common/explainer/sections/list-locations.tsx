@@ -65,7 +65,7 @@ export const ListingLocationsSection = ({
         <div className="w-full flex flex-col gap-y-4">
           <CodeSnippet
             label={
-              <a href="https://github.com/medusajs/medusa">
+              <a href="https://github.com/medusajs/reservation-try-on-demo/blob/main/src/app/api/list-locations/route.ts">
                 src/app/api/list-locations/route.ts
               </a>
             }

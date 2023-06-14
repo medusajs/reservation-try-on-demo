@@ -34,10 +34,10 @@ export const ProductDataSection = ({ product }: { product: PricedProduct }) => {
       }
       body={
         <div className="w-full flex flex-col gap-y-4">
-          <CodeSnippet // TODO: link to github
+          <CodeSnippet
             language="typescript"
             label={
-              <a href="https://github.com/medusajs/medusa">
+              <a href="https://github.com/medusajs/reservation-try-on-demo/blob/main/src/components/common/explainer/explainer.tsx#L42">
                 src/components/common/modal/explainer.tsx
               </a>
             }
