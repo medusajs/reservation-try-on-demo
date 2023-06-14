@@ -2,13 +2,11 @@ import { Fade, FocusModal, FocusModalHeader } from "./fade"
 import {
   LocationButton,
   LocationWtihAvailability,
-  TryOnDrawer,
 } from "@/components/products/try-on"
 import React, { useEffect, useState } from "react"
 
 import Card from "@/components/products/card/Card"
 import { CodeSnippet } from "../code-snippet"
-import { DataSnippet } from "../code-snippet/CodeSnippet"
 import { Divider } from "../divider"
 import { Nextjs } from "@/components/icons/nextjs"
 import { PricedProduct } from "@medusajs/medusa/dist/types/pricing"
@@ -84,20 +82,39 @@ const ExplainerContent = () => {
   )
 }
 
+const Paragraph: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+  return (
+    <p className="text-subtle-light dark:text-subtle-dark text-body-regular first:mt-0 mt-4">
+      {children}
+    </p>
+  )
+}
+
+const Pill: React.FC<{ link: string; children: React.ReactNode }> = ({
+  link,
+  children,
+}) => {
+  return (
+    <a
+      href={link}
+      className="bg-tag-neutral-light dark:bg-tag-neutral-dark py-1.5 text-labels-small dark:text-base-dark text-base-light font-medium px-4 rounded-full shadow-card-rest"
+    >
+      {children}
+    </a>
+  )
+}
+
 const ExplainerRubric = () => {
   return (
     <div className="flex flex-col w-full items-start sm:px-5">
-      <a
-        href="https://docs.medusajs.com/?utm_source=inventory-module-demo&utm_medium=recap&utm_campaign=about-page&utm_content=pill"
-        className="bg-tag-neutral-light dark:bg-tag-neutral-dark py-1.5 text-labels-small dark:text-base-dark text-base-light font-medium px-4 rounded-full shadow-card-rest"
-      >
+      <Pill link="https://docs.medusajs.com/?utm_source=inventory-module-demo&utm_medium=recap&utm_campaign=about-page&utm_content=pill">
         <span className="mr-3 pr-3 border-r dark:border-r-neutral-a-dark border-r-neutral-button-light">
           Building blocks
         </span>
         <span className="dark:text-subtle-dark text-subtle-light">
           Read more
         </span>
-      </a>
+      </Pill>
 
       <div className="flex flex-col gap-y-1.5">
         <h2 className="text-headers-h4 font-medium mt-7">
@@ -107,29 +124,31 @@ const ExplainerRubric = () => {
           </p>
           Next.JS Functions
         </h2>
-        <p className="text-subtle-light dark:text-subtle-dark text-body-regular">
-          In this walkthrough we will create an omnichannel experience that
-          allows a customer to book an item online to try-on in a physical
-          store.
-        </p>
-        <p className="text-subtle-light dark:text-subtle-dark text-body-regular">
-          To ensure that the item is ready in-store for customers to try on, we
-          will create a Reservation for the item upon booking.
-        </p>
-        <p className="text-subtle-light dark:text-subtle-dark text-body-regular">
-          We will use Medusa&apos;s Inventory and Stock Location modules
-          directly in Next.js functions to achieve this experience.
-        </p>
-        <p className="text-subtle-light dark:text-subtle-dark text-body-regular">
-          You can read more about Medusa&apos;s omnichannel capabilities{" "}
-          <a
-            className="font-semibold"
-            href="https://medusajs.com/blog/announcing-multi-warehouse/?utm_source=inventory-module-demo&utm_medium=recap&utm_campaign=about-page"
-          >
-            here
-          </a>
-          .
-        </p>
+        <div>
+          <Paragraph>
+            In this walkthrough we will create an omnichannel experience that
+            allows a customer to book an item online to try-on in a physical
+            store.
+          </Paragraph>
+          <Paragraph>
+            To ensure that the item is ready in-store for customers to try on,
+            we will create a Reservation for the item upon booking.
+          </Paragraph>
+          <Paragraph>
+            We will use Medusa&apos;s Inventory and Stock Location modules
+            directly in Next.js functions to achieve this experience.
+          </Paragraph>
+          <Paragraph>
+            You can read more about Medusa&apos;s omnichannel capabilities{" "}
+            <a
+              className="font-semibold"
+              href="https://medusajs.com/blog/announcing-multi-warehouse/?utm_source=inventory-module-demo&utm_medium=recap&utm_campaign=about-page"
+            >
+              here
+            </a>
+            .
+          </Paragraph>
+        </div>
       </div>
     </div>
   )
@@ -138,6 +157,11 @@ const ExplainerRubric = () => {
 const FooterBlock = () => {
   return (
     <div className="flex flex-col gap-y-1.5 mt-20">
+      <div className="mb-3">
+        <Pill link="https://docs.medusajs.com/?utm_source=inventory-module-demo&utm_medium=recap&utm_campaign=about-page&utm_content=pill">
+          <span className="">FAQ</span>
+        </Pill>
+      </div>
       <h4 className="text-headers-h4 pt-3 text-base-light dark:text-base-dark">
         What are Medusa Modules?
       </h4>
@@ -151,28 +175,30 @@ const FooterBlock = () => {
       <h4 className="text-headers-h4 pt-3 text-base-light dark:text-base-dark">
         Why run it from a Next.js function?
       </h4>
-      <p className="text-subtle-light dark:text-subtle-dark text-body-regular">
-        Running Medusa&apos;s Product Module in a serverless function provides
-        several benefits over hosting a conventional backend:
-      </p>
-      <ul className="list-disc ml-8 text-subtle-light dark:text-subtle-dark text-body-regular">
-        <li>
-          It offers fast response times, making it suitable for use cases like
-          realtime personalization.
-        </li>
-        <li>
-          The Next.js function scales automatically to meet demand, meaning
-          there is no need to worry about provisioning and managing servers.
-        </li>
-        <li>
-          The Next.js function is only invoked when needed, reducing the overall
-          cost of running the module.
-        </li>
-      </ul>
-      <p className="text-subtle-light dark:text-subtle-dark text-body-regular">
-        Our future work will focus on publishing all core Medusa domains as
-        modules and making them compatible with edge runtimes.
-      </p>
+      <div>
+        <Paragraph>
+          Running Medusa&apos;s Product Module in a serverless function provides
+          several benefits over hosting a conventional backend:
+        </Paragraph>
+        <ul className="list-disc ml-8 text-subtle-light dark:text-subtle-dark text-body-regular mt-4">
+          <li>
+            It offers fast response times, making it suitable for use cases like
+            realtime personalization.
+          </li>
+          <li>
+            The Next.js function scales automatically to meet demand, meaning
+            there is no need to worry about provisioning and managing servers.
+          </li>
+          <li>
+            The Next.js function is only invoked when needed, reducing the
+            overall cost of running the module.
+          </li>
+        </ul>
+        <Paragraph>
+          Our future work will focus on publishing all core Medusa domains as
+          modules and making them compatible with edge runtimes.
+        </Paragraph>
+      </div>
     </div>
   )
 }
@@ -214,7 +240,7 @@ const ProductDataBlock = ({ product }: { product: PricedProduct }) => {
   const handleClick = () => {
     notification(
       "warning",
-      "Hold on!",
+      "Hold on",
       "Let's first explain how inventory levels and stock locations play a role"
     )
   }
@@ -224,12 +250,12 @@ const ProductDataBlock = ({ product }: { product: PricedProduct }) => {
       title="Start by getting product data"
       description={
         <>
-          <p className="text-body-regular text-subtle-light dark:text-subtle-dark mt-1">
+          <p className="text-body-regular text-subtle-light dark:text-subtle-dark">
             The first step in the try-on booking flow is to get the products
             that can be booked for try on. We will use Medusa&apos;s js client
             to retrieve a list of these products below.
           </p>
-          <p className="text-body-regular text-subtle-light dark:text-subtle-dark mt-1">
+          <p className="text-body-regular text-subtle-light dark:text-subtle-dark mt-4">
             You can view the data output below or view an example component of
             how the product could be displayed in the frontend.
           </p>
@@ -332,19 +358,19 @@ const ListingInventoryLevelsBlock = () => {
       title="Listing inventory levels"
       description={
         <>
-          <p className="text-body-regular text-subtle-light dark:text-subtle-dark mt-1">
+          <Paragraph>
             When the user clicks the product they want to try on they should
             view a list of stores where they can book the try on.
-          </p>
-          <p className="text-body-regular text-subtle-light dark:text-subtle-dark mt-1">
+          </Paragraph>
+          <Paragraph>
             To get this list we will use Medusa&apos;s Stock Location and
             Inventory modules.
-          </p>
-          <p className="text-body-regular text-subtle-light dark:text-subtle-dark mt-1">
+          </Paragraph>
+          <Paragraph>
             The Product in our Medusa store is kept at several locations and we
             can use the approach in the code snippet below to list the stock
             level for each of them.
-          </p>
+          </Paragraph>
         </>
       }
       body={
@@ -403,7 +429,7 @@ const ListingInventoryLevelsBlock = () => {
                     </a>
                   }
                   codeClassNames="h-[337px]"
-                  language="typescript"
+                  language="typescript" // TODO: make dots an explaining comment
                   code={`import { initialize as initializeInventory } from "@medusajs/inventory"
 import { initialize as initializeStockLocation } from "@medusajs/stock-location"
 
@@ -416,8 +442,10 @@ export async function GET(request: Request) {
   const [levels] = await inventoryService.listInventoryLevels(
     { inventory_item_id: variantInventoryItemId }
   )
+
+  // ...
   
-  ...
+}
 `}
                 />
               </div>
@@ -429,14 +457,34 @@ export async function GET(request: Request) {
   )
 }
 
-const whatIsAReservationDescription =
-  "When the user has filled out relevant information about their booking and submits the modal form, a second vercel function is invoked to create the reservation in the backend. This function uses only the Inventory Module (initialization is omitted here). Based on the information submitted by the customer the reservation is created with a pre-defined quantity and description. User information is passed in the metadata."
 const WhatIsAReservationBlock = () => {
   return (
     <ExplainerBlock
       subtitle="Reservations"
       title="Creating a reservation item"
-      description={whatIsAReservationDescription}
+      description={
+        <>
+          <Paragraph>
+            So far we have listed products and gathered information about where
+            the product is stocked and available for try-on. The next step in
+            the experience is to ensure items are available when a customer has
+            booked a try-on - we don&apos;t want the customer to arrive at the
+            store and find that the item they wanted to try has been sold out.
+            To enable this will use Medusa&apos;s Reservations.
+          </Paragraph>
+          <Paragraph>
+            Reservations create a virtual reduction in stock and are, by
+            default, used to avoid overselling items when an order is placed and
+            pending fulfillment. In our example we are using reservations to
+            make sure items are ready to try on when our customer visit the
+            store following their try-on booking.
+          </Paragraph>
+          <Paragraph>
+            The code snippet below shows how to create a Reservation through a
+            Nextjs function using the Inventory Module.
+          </Paragraph>
+        </>
+      }
       body={
         <div className="w-full flex flex-col gap-y-4">
           <ComponentDataBox
@@ -529,18 +577,18 @@ const ListingLocationsBlock = ({ product }: { product: PricedProduct }) => {
       title="Joining locations"
       description={
         <>
-          <p className="text-body-regular text-subtle-light dark:text-subtle-dark mt-1">
+          <Paragraph>
             In the Inventory Level data we get the <code>location_id</code>{" "}
             where the inventory is stored, but we want to get data like the name
             of the location and whether the location allows try ons in order to
             display something nice to the customer. For this we use the stock
             location module.
-          </p>
-          <p className="text-body-regular text-subtle-light dark:text-subtle-dark mt-1">
+          </Paragraph>
+          <Paragraph>
             Putting it all together we can generate a response in our Nextjs
             function with all the locations where the product can be tried.
             Below you can see the data output and a component representation.
-          </p>
+          </Paragraph>
         </>
       }
       body={
@@ -552,8 +600,10 @@ const ListingLocationsBlock = ({ product }: { product: PricedProduct }) => {
               </a>
             }
             language="typescript"
-            code={`  ...
-    
+            code={`export async function GET(request: Request) {
+
+  // ...
+            
   const stockLocations = await stockLocationService.list({
     id: levels.map((l) => l.location_id),
   })
@@ -589,7 +639,7 @@ const LocationsButtons = ({
   const handleClick = () => {
     notification(
       "warning",
-      "Not yet!",
+      "Not yet",
       "We just need to talk about reservation items first"
     )
   }
@@ -602,7 +652,7 @@ const LocationsButtons = ({
         return (
           <div
             key={i}
-            className="hover:shadow-md hover:bg-subtle-light dark:hover:bg-subtle-dark rounded-lg"
+            className="hover:shadow-md hover:bg-subtle-light dark:hover:bg-subtle-dark rounded-lg w-[500px]"
           >
             <LocationButton
               onClick={handleClick}
@@ -709,14 +759,14 @@ const ExplainerBlock: React.FC<ExplainerBlockProps> = ({
           {subtitle}
         </h2>
       </div>
-      <h2 className="text-labels-regular font-medium mt-2">{title}</h2>
-      {typeof description !== "string" ? (
-        description
-      ) : (
-        <p className="text-body-regular text-subtle-light dark:text-subtle-dark mt-1">
-          {description}
-        </p>
-      )}
+      <h2 className="font-medium mt-2 mb-2 text-header-h4">{title}</h2>
+      <div>
+        {typeof description !== "string" ? (
+          description
+        ) : (
+          <Paragraph>{description}</Paragraph>
+        )}
+      </div>
       {body && <div className="mt-4">{body}</div>}
     </div>
   )

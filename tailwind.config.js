@@ -15,7 +15,7 @@ module.exports = {
         "explainer": 
           "0px 0px 0px 1px rgba(17, 24, 28, 0.08), 0px 16px 32px rgba(17, 24, 28, 0.08), 0px 2px 24px rgba(17, 24, 28, 0.08)",
         "card-rest": 
-          "0px 0px 0px 1px rgba(17, 24, 28, 0.08), 0px 1px 2px -1px rgba(17, 24, 28, 0.08), 0px 2px 4px rgba(17, 24, 28, 0.04);"
+          "0px 0px 0px 1px rgba(17, 24, 28, 0.08), 0px 1px 2px -1px rgba(17, 24, 28, 0.08), 0px 2px 4px rgba(17, 24, 28, 0.04)"
       },
       backgroundColor: {
         "base-dark": "#1C1C1C",
@@ -82,7 +82,7 @@ module.exports = {
         "labels-xsmall": ["12px", "20px"],
         "code": ["12px", "18px"],
         "code-xsmall": ["10px", "14px"],
-        "body-regular": ["14px", "24px"],
+        "body-regular": ["16px", "28px"],
         "headers-h2": ["42px", "44px"],
         "headers-h2.5": ["32px", "44px"],
         "headers-h3": ["24px", "32px"],
