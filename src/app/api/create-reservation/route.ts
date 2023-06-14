@@ -39,11 +39,8 @@ export async function POST(request: NextRequest) {
         error: "Missing parameters",
       }),
       {
-        status: 200,
+        status: 400,
       }
     )
-    // response.status(400).json({
-    //   error: "Missing parameters",
-    // })
   }
 }
