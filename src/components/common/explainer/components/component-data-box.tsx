@@ -16,7 +16,7 @@ export const ComponentDataBox = ({
 
   return (
     <div className="rounded-lg w-full md:h-[460px] flex flex-col overflow-y-auto my-5">
-      <div className="w-full text-xs items-center font-semibold gap-x-6 flex pl-8 pb-2 text-base-light dark:text-base-dark">
+      <div className="w-full text-xs items-center font-medium gap-x-6 flex pl-8 pb-2 text-base-light dark:text-base-dark">
         <span
           onClick={() => {
             setState("data")
@@ -53,24 +53,24 @@ export const ComponentDataBox = ({
         </span>
       </div>
       <div className="max-w-full flex mt-2 flex-col h-full overflow-x-hidden">
-        {state === "data" && (
-          <div
-            className={clsx("w-full h-full flex items-center justify-center")}
-          >
-            <CodeSnippet
-              code={data}
-              language="typescript"
-              codeClassNames="md:h-[390px] h-[300px]"
-            />
-          </div>
-        )}
-        {state === "component" && (
-          <div
-            className={clsx("w-full h-full flex items-center justify-center")}
-          >
-            {Component}
-          </div>
-        )}
+        <div
+          className={clsx("w-full h-full flex items-center justify-center", {
+            hidden: state !== "data",
+          })}
+        >
+          <CodeSnippet
+            code={data}
+            language="typescript"
+            codeClassNames="sm:h-[390px] h-[300px]"
+          />
+        </div>
+        <div
+          className={clsx("w-full h-full flex items-center justify-center", {
+            hidden: state !== "component",
+          })}
+        >
+          {Component}
+        </div>
       </div>
     </div>
   )

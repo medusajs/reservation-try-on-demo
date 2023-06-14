@@ -7,7 +7,7 @@ export const FAQ = () => {
       <div className="mb-3">
         <Pill>FAQ</Pill>
       </div>
-      <h4 className="text-headers-h4 pt-3 text-base-light dark:text-base-dark">
+      <h4 className="text-headers-h4 pt-3 text-base-light dark:text-base-dark font-medium">
         What are Medusa Modules?
       </h4>
       <p className="text-subtle-light dark:text-subtle-dark text-body-regular">
@@ -17,7 +17,7 @@ export const FAQ = () => {
         commerce logic and composition with other tools. This flexibility allows
         for greater choice in the tech stack used in conjunction with Medusa.
       </p>
-      <h4 className="text-headers-h4 pt-3 text-base-light dark:text-base-dark">
+      <h4 className="text-headers-h4 pt-3 text-base-light dark:text-base-dark font-medium">
         Why run it from a Next.js function?
       </h4>
       <div>

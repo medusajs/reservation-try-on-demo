@@ -77,11 +77,11 @@ const ExplainerPoints: React.FC<ExplainerPointsProps> = ({ product }) => {
       <h3 className=" text-base-light dark:text-base-dark text-headers-h3 sm:pl-6">
         How to implement Book Try-On with Medusa
       </h3>
-      <div className="w-full flex pt-4 pl-2 sm:overflow-x-scroll pr-5">
-        <div className="min-h-full w-[1px] mr-6 bg-border-light dark:bg-border-dark flex flex-col justify-end">
+      <div className="w-full flex pt-4 sm:pl-2 sm:overflow-x-scroll sm:pr-5">
+        <div className="min-h-full w-[1px] mr-6 bg-border-light dark:bg-border-dark sm:flex-col justify-end hidden sm:flex">
           <div className="h-[200px] w-full bg-gradient-to-t from-white dark:from-[#1C1C1C]" />
         </div>
-        <div className="flex flex-col w-[calc(100%-25px)] ">
+        <div className="flex flex-col w-full sm:w-[calc(100%-25px)] ">
           <ProductDataSection product={product} />
           <Divider />
           <ListingInventoryLevelsSection />

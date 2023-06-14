@@ -1,4 +1,4 @@
-import { Card } from "@/components/products"
+import Card from "@/components/products/card/Card"
 import { ExplainerSection } from "../components/explainer-section"
 import { PricedProduct } from "@medusajs/medusa/dist/types/pricing"
 import clsx from "clsx"

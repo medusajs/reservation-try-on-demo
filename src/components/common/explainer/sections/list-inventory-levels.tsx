@@ -80,7 +80,7 @@ export const ListingInventoryLevelsSection = () => {
                       src/app/api/list-locations/route.ts
                     </a>
                   }
-                  codeClassNames="h-[337px]"
+                  codeClassNames=""
                   language="typescript"
                   code={`import { initialize as initializeInventory } from "@medusajs/inventory"
 import { initialize as initializeStockLocation } from "@medusajs/stock-location"
@@ -97,8 +97,7 @@ export async function GET(request: Request) {
 
   // ...
   
-}
-`}
+}`}
                 />
               </div>
             }

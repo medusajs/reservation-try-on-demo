@@ -56,7 +56,7 @@ module.exports = {
         "muted-dark": "#706F78",
         "muted-light": "#889096",
         "subtle-dark": "#7E7D86",
-        "subtle-light": "#687076",
+        "subtle-light": "#4B5563",
         "error-dark": "#E5484D",
         "error-light": "#E5484D",
         "tag-neutral-dark": "#A09FA6",
