@@ -191,7 +191,7 @@ export const TryOnDrawer = ({
   return (
     <SideModal close={cl} isVisible={isVisible}>
       <form className="h-full w-full">
-        <div className="flex h-full flex-col justify-between">
+        <div className="flex h-full flex-col">
           <div className="border-base-light dark:border-base-dark flex items-center justify-between border-b px-8 py-6">
             <h1 className="font-medium text-xl">Book Try-On</h1>
             <button
@@ -279,7 +279,7 @@ export const TryOnDrawer = ({
               </div>
             </div>
           </div>
-          <div className="dark:border-base-dark flex-wrap gap-y-2 border-base-light border-t px-8 pt-4 pb-6 text-sm flex items-center justify-end gap-x-2">
+          <div className="dark:border-base-dark justify-self-end flex-wrap gap-y-2 border-base-light border-t px-8 pt-4 pb-6 text-sm flex items-center justify-end gap-x-2">
             <button
               className="px-3 py-1.5 rounded-lg border dark:border-base-dark border-base-light hover:bg-gray-50"
               onClick={cl}
