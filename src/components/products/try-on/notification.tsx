@@ -1,9 +1,3 @@
-import {
-  ArrowRefresh,
-  CombinationMarkLogo,
-  LastClick,
-} from "@/components/icons"
-
 import { CheckedCircleIcon } from "."
 import ChevronDown from "@/components/common/icons/chevron-down"
 import React from "react"

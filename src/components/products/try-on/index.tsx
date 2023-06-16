@@ -4,11 +4,6 @@ import {
   ProductOption,
 } from "@medusajs/medusa"
 import {
-  NEXT_PUBLIC_CREATE_RESERVATIONS_ENDPOINT,
-  NEXT_PUBLIC_LIST_LOCATIONS_ENDPOINT,
-  NEXT_PUBLIC_MEDUSA_BACKEND_URL,
-} from "@/app/utils/endpoints"
-import {
   ProductProvider,
   useProductActions,
 } from "@/lib/context/product-context"

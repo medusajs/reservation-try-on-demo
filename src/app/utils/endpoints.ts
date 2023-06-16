@@ -1,9 +1,0 @@
-export const {
-  NEXT_PUBLIC_LIST_LOCATIONS_ENDPOINT,
-  NEXT_PUBLIC_CREATE_RESERVATIONS_ENDPOINT,
-  NEXT_PUBLIC_MEDUSA_BACKEND_URL,
-} = {
-  NEXT_PUBLIC_LIST_LOCATIONS_ENDPOINT: 'https://list-locations.vercel.app',
-  NEXT_PUBLIC_CREATE_RESERVATIONS_ENDPOINT: 'https://reserve-in-store.vercel.app',
-  NEXT_PUBLIC_MEDUSA_BACKEND_URL: 'https://staging.medusajs.com',
-}
