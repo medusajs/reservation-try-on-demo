@@ -150,13 +150,18 @@ export const TryOnDrawer = ({
         }, {}) || {}
       )
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   const notification = useNotification()
-  const submit = (e) => {
+  const submit = (e: {
+    stopPropagation: () => void
+    preventDefault: () => void
+  }) => {
+    e.stopPropagation()
+    e.preventDefault()
+
     if (!inventoryItemId) {
-      e.stopPropagation()
-      e.preventDefault()
       notification(
         "error",
         "You have to select a size",
@@ -165,8 +170,6 @@ export const TryOnDrawer = ({
       return
     }
     if (!selectedLocation) {
-      e.stopPropagation()
-      e.preventDefault()
       notification(
         "error",
         "You have to select a location",
