@@ -69,6 +69,12 @@ function getIcon(type: string) {
           <ChevronDown />
         </span>
       )
+    case "error":
+      return (
+        <span className="text-red-600">
+          <CrossIcon />
+        </span>
+      )
     case "success":
     default:
       return (

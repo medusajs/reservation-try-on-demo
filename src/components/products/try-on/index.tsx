@@ -127,6 +127,11 @@ export const TryOnDrawer = ({
 
   React.useEffect(() => {
     const setLocationData = async () => {
+      if (!inventoryItemId) {
+        setTryOnLocation([])
+        return
+      }
+
       setLoadingLocations(true)
       const { try_on_locations } = await fetchLocations(inventoryItemId!)
 
@@ -148,7 +153,27 @@ export const TryOnDrawer = ({
   }, [])
 
   const notification = useNotification()
-  const submit = () => {
+  const submit = (e) => {
+    if (!inventoryItemId) {
+      e.stopPropagation()
+      e.preventDefault()
+      notification(
+        "error",
+        "You have to select a size",
+        "Please select a size to book a try-on"
+      )
+      return
+    }
+    if (!selectedLocation) {
+      e.stopPropagation()
+      e.preventDefault()
+      notification(
+        "error",
+        "You have to select a location",
+        "Please select a location to book a try-on"
+      )
+      return
+    }
     const metadata = Object.entries({
       email,
       phone,
@@ -198,7 +223,6 @@ export const TryOnDrawer = ({
               className="p-1 hover:bg-grey-10 rounded-lg border border-grey-20"
               type="button"
               onClick={(e: any) => {
-                console.log("closing")
                 cl(e)
               }}
             >
@@ -241,7 +265,7 @@ export const TryOnDrawer = ({
 
               <div className="px-8 py-6 border-t border-b dark:border-base-dark border-base-light flex flex-col gap-y-4">
                 <h1 className="text-base font-medium">Location</h1>
-                <div className="max-h-[300px] min-h-[100px] overflow-auto flex flex-col gap-y-2">
+                <div className="max-h-[300px] overflow-auto flex flex-col gap-y-2">
                   {loadingLocations ? (
                     <div className="w-full flex justify-center ">
                       <Spinner size="medium" />
@@ -305,10 +329,10 @@ const LocationButtons = ({
   selectedLocation: string
   setSelectedLocation: (arg: string) => void
 }) => {
-  if (!tryOnLocation) {
+  if (!tryOnLocation.length && !selectedLocation) {
     return (
       <p className="text-subtle-light dark:text-subtle-dark">
-        Select a variant to see available locations
+        Select a size to see available locations
       </p>
     )
   }
