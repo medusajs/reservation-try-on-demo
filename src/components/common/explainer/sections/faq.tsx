@@ -22,8 +22,9 @@ export const FAQ = () => {
       </h4>
       <div>
         <Paragraph>
-          Running Medusa&apos;s Product Module in a serverless function provides
-          several benefits over hosting a conventional backend:
+          Running Medusa&apos;s Inventory and Stock location Modules in a
+          serverless function provides several benefits over hosting a
+          conventional backend:
         </Paragraph>
         <ul className="list-disc ml-8 text-subtle-light dark:text-subtle-dark text-body-regular mt-4">
           <li>
