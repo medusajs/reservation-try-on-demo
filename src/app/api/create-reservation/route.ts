@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server"
 
+import { getDbURL } from "@/lib/data/get-db-url"
 import { initialize } from "@medusajs/inventory"
 
 type RequestBody = {
@@ -11,10 +12,11 @@ export async function POST(request: NextRequest) {
   const { location_id, inventory_item_id, metadata } = ((await request.json()) ??
     {}) as RequestBody
 
+
   if (location_id && inventory_item_id) {
     const inventoryService = await initialize({
       database: {
-        url: process.env.POSTGRES,
+        url: await getDbURL(),
         type: "postgres",
         extra: {
           ssl: { rejectUnauthorized: false },

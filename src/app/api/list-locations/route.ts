@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server"
+import { getDbURL } from "@/lib/data/get-db-url"
 import { initialize as initializeInventory } from "@medusajs/inventory"
 import { initialize as initializeStockLocation } from "@medusajs/stock-location"
 
@@ -10,10 +11,10 @@ export async function GET(request: Request) {
       try_on_locations: [],
     })
   }
-
+  
   const moduleConfig = {
     database: {
-      url: process.env.POSTGRES,
+      url: await getDbURL(),
       type: "postgres",
       extra: {
         ssl: { rejectUnauthorized: false },
