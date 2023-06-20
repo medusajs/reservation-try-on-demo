@@ -43,6 +43,14 @@ const linkGroups: FooterLinkGroupProps[] = [
     },
     links: [],
   },
+  {
+    groupName: "Demo Source Code",
+    link: {
+      href: "https://github.com/medusajs/reservation-try-on-demo",
+      label: "Demo Source Code",
+    },
+    links: [],
+  },
 ]
 
 const Footer = () => {
