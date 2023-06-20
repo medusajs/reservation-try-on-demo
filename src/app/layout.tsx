@@ -5,6 +5,8 @@ import { Footer, Nav } from "@/components"
 import { GoogleAnalytics } from "@/components/common/"
 import { Inter } from "next/font/google"
 import { Metadata } from "next"
+import { Suspense } from "react"
+import { Toaster } from "@/components/toaster/toaster"
 import clsx from "clsx"
 
 const inter = Inter({ subsets: ["latin"] })
@@ -64,10 +66,13 @@ export default function RootLayout({
           "dark:bg-base-dark bg-base-light text-base-light dark:text-base-dark min-h-screen"
         )}
       >
-        <GoogleAnalytics />
         <Nav />
         <main className="pb-16">{children}</main>
+        <Toaster />
         <Footer />
+        <Suspense fallback={<></>}>
+          <GoogleAnalytics />
+        </Suspense>
       </body>
     </html>
   )
