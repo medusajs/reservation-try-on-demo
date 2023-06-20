@@ -1,13 +1,13 @@
-import "./globals.css";
+import "./globals.css"
 
-import { Footer, Nav } from "@/components";
-import { GoogleAnalytics } from "@/components/common";
+import { Footer, Nav } from "@/components"
+import { GoogleAnalytics } from "@/components/common/"
 
-import { Inter } from "next/font/google";
-import { Toaster } from "react-hot-toast";
-import clsx from "clsx";
+import { Inter } from "next/font/google"
+import { Toaster } from "react-hot-toast"
+import clsx from "clsx"
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ["latin"] })
 
 export const metadata = {
   title: {
@@ -25,12 +25,12 @@ export const metadata = {
     author: "MedusaJS",
     images: "/product-module-demo-thumbnail.jpg",
   },
-};
+}
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode;
+  children: React.ReactNode
 }) {
   return (
     <html lang="en">
@@ -58,5 +58,5 @@ export default function RootLayout({
         <Footer />
       </body>
     </html>
-  );
+  )
 }
