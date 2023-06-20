@@ -210,8 +210,12 @@ export const TryOnDrawer = ({
     setPhone(undefined)
   }
 
-  const cl = (e: { stopPropagation: () => void }) => {
+  const cl = (e: {
+    stopPropagation: () => void
+    preventDefault: () => void
+  }) => {
     e.stopPropagation()
+    e.preventDefault()
     reset()
     close()
   }
@@ -232,7 +236,7 @@ export const TryOnDrawer = ({
               <CrossIcon />
             </button>
           </div>
-          <div className="text-sm overflow-y-scroll">
+          <div className="text-sm overflow-y-scroll flex flex-col grow">
             <div className="flex flex-col grow overflow-y-scroll">
               <div className="px-8 py-6 flex flex-col gap-y-4">
                 <h1 className="text-base font-medium">Product</h1>

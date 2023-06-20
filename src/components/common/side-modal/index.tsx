@@ -1,14 +1,13 @@
 import * as Portal from "@radix-ui/react-portal"
 
-import { animated, useSpring } from "@react-spring/web"
-
 import React from "react"
 import clsx from "clsx"
 
-const MODAL_WIDTH = 560
-
 type SideModalProps = {
-  close: (e: { stopPropagation: () => void }) => void
+  close: (e: {
+    stopPropagation: () => void
+    preventDefault: () => void
+  }) => void
   isVisible: boolean
   children: React.ReactNode
 }
