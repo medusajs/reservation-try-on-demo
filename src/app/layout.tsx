@@ -4,16 +4,23 @@ import { Footer, Nav } from "@/components"
 
 import { GoogleAnalytics } from "@/components/common/"
 import { Inter } from "next/font/google"
+import { Metadata } from "next"
 import { Toaster } from "react-hot-toast"
 import clsx from "clsx"
 
 const inter = Inter({ subsets: ["latin"] })
 
-export const metadata = {
+export const metadata: Metadata = {
   title: {
     template: "Medusa Inventory Module Demo",
     default: "Medusa Inventory Module Demo",
   },
+  authors: [
+    {
+      name: "Medusa",
+      url: "@medusajs",
+    },
+  ],
   description:
     "Learn how to use the Medusa Inventory and Stock Location Modules in Next.js functions to create a custom experience in your storefront. Discover the benefits of running the Modules in a serverless environment and get started building today.",
   openGraph: {
@@ -22,8 +29,22 @@ export const metadata = {
     description:
       "Learn how to use the Medusa Inventory and Stock Location Modules in Next.js functions to create a custom experience in your storefront. Discover the benefits of running the Modules in a serverless environment and get started building today.",
     type: "website",
-    author: "MedusaJS",
     images: "/reservation-demo-thumbnail.jpg",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Medusa Inventory Module Demo",
+    description:
+      "Learn how to use the Medusa Inventory and Stock Location Modules in Next.js functions to create a custom experience in your storefront. Discover the benefits of running the Modules in a serverless environment and get started building today.",
+    creator: "@medusajs",
+    images: [
+      {
+        url: "/reservation-demo-thumbnail.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Medusa Inventory Module Demo",
+      },
+    ],
   },
 }
 

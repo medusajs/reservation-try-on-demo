@@ -1,5 +1,3 @@
-"use client"
-
 import { Explainer } from "@/components/common/explainer"
 
 export default function Home() {
