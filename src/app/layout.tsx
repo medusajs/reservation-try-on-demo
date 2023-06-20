@@ -1,6 +1,7 @@
 import "./globals.css"
 
 import { Footer, Nav } from "@/components"
+import { GoogleAnalytics } from "@/components/common/"
 
 import { Inter } from "next/font/google"
 import { Toaster } from "react-hot-toast"
@@ -43,6 +44,7 @@ export default function RootLayout({
           name="viewport"
           content="width=device-width, initial-scale=1, maximum-scale=1"
         />
+        <GoogleAnalytics />
         <Nav />
         <Toaster
           containerStyle={{
