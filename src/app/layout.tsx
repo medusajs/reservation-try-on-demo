@@ -1,8 +1,8 @@
 import "./globals.css"
 
 import { Footer, Nav } from "@/components"
-import { GoogleAnalytics } from "@/components/common/"
 
+import { GoogleAnalytics } from "@/components/common/"
 import { Inter } from "next/font/google"
 import { Toaster } from "react-hot-toast"
 import clsx from "clsx"
@@ -23,7 +23,7 @@ export const metadata = {
       "Learn how to use the Medusa Inventory and Stock Location Modules in Next.js functions to create a custom experience in your storefront. Discover the benefits of running the Modules in a serverless environment and get started building today.",
     type: "website",
     author: "MedusaJS",
-    images: "/product-module-demo-thumbnail.jpg",
+    images: "/reservation-demo-thumbnail.jpg",
   },
 }
 
@@ -34,16 +34,16 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1"
+      />
       <body
         className={clsx(
           inter.className,
           "dark:bg-base-dark bg-base-light text-base-light dark:text-base-dark min-h-screen"
         )}
       >
-        <meta
-          name="viewport"
-          content="width=device-width, initial-scale=1, maximum-scale=1"
-        />
         <GoogleAnalytics />
         <Nav />
         <Toaster
