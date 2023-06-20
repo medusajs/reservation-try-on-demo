@@ -14,6 +14,7 @@ import { PricedProduct } from "@medusajs/medusa/dist/types/pricing"
 import { ProductDataSection } from "./sections/product-data"
 import { ProductProvider } from "@/lib/context/product-context"
 import { Spinner } from "../spinner"
+import { Toaster } from "react-hot-toast"
 import { WhatIsAReservationSection } from "./sections/what-is-a-reservation"
 import { client } from "@/lib/data/medusa"
 
@@ -58,6 +59,14 @@ const ExplainerContent = () => {
 
   return (
     <div className="flex flex-col w-full items-start mb-20">
+      <Toaster
+        containerStyle={{
+          top: 74,
+          left: 24,
+          bottom: 24,
+          right: 24,
+        }}
+      />
       <ExplainerHeader />
       <Divider />
       {loading && (

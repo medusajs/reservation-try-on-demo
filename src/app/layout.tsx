@@ -5,7 +5,6 @@ import { Footer, Nav } from "@/components"
 import { GoogleAnalytics } from "@/components/common/"
 import { Inter } from "next/font/google"
 import { Metadata } from "next"
-import { Toaster } from "react-hot-toast"
 import clsx from "clsx"
 
 const inter = Inter({ subsets: ["latin"] })
@@ -67,14 +66,6 @@ export default function RootLayout({
       >
         <GoogleAnalytics />
         <Nav />
-        <Toaster
-          containerStyle={{
-            top: 74,
-            left: 24,
-            bottom: 24,
-            right: 24,
-          }}
-        />
         <main className="pb-16">{children}</main>
         <Footer />
       </body>
