@@ -419,7 +419,7 @@ export const LocationButton = ({
   const getBadgeVariant = (
     available: number
   ): { variant: "warning" | "danger"; label: string } | null => {
-    if (available > 10) {
+    if (available >= 10000) {
       return null
     }
     if (available > 0) {
